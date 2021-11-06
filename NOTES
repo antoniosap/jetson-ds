@@ -1,0 +1,12 @@
+4.11.2021
+---------
+
+jetson nano aquarius - 192.168.147.20
+
+imx299 camera
+
+test:
+nvgstcapture-1.0 --orientation=2 --prev-res=4 // (4) : 1920x1080
+
+NVIDIA TOOLS:
+https://docs.nvidia.com/metropolis/deepstream/dev-guide/graphtools-docs/docs/text/GraphComposer_app_Workflow.html

@@ -1,0 +1,53 @@
+dependencies:
+- extension: NvDsSourceExt
+  uuid: a632d022-3425-4848-9074-e6483ef74366
+  version: 0.0.6
+- extension: NvDsBaseExt
+  uuid: 56d7e3ec-62c6-4652-bcc8-4f1c3b00df03
+  version: 0.0.4
+- extension: NvDsOutputSinkExt
+  uuid: 3fc9ad87-03e7-47a8-bbfc-8501c3f7ff2f
+  version: 0.0.3
+---
+components:
+- name: nv_ds_camera_src_input3..1390
+  parameters:
+    video-out: nv_ds_static_output4..1790
+  type: nvidia::deepstream::NvDsCameraSrcInput
+- name: nv_ds_static_output4..1790
+  type: nvidia::deepstream::NvDsStaticOutput
+name: NvDsCameraSrcInput..1710
+ui_property:
+  position:
+    x: 54.0
+    y: 26.0
+  state: 0
+---
+components:
+- name: nv_ds_video_renderer5..c950
+  parameters:
+    video-in: nv_ds_static_input6..41d0
+  type: nvidia::deepstream::NvDsVideoRenderer
+- name: nv_ds_static_input6..41d0
+  type: nvidia::deepstream::NvDsStaticInput
+name: NvDsVideoRenderer..9710
+ui_property:
+  position:
+    x: 395.0
+    y: 19.0
+  state: 0
+---
+components:
+- name: nv_ds_connection7..3150
+  parameters:
+    source: NvDsCameraSrcInput..1710/nv_ds_static_output4..1790
+    target: NvDsVideoRenderer..9710/nv_ds_static_input6..41d0
+  type: nvidia::deepstream::NvDsConnection
+name: node..3e10
+ui_property: {}
+---
+components:
+- name: nv_ds_scheduler8..45d0
+  type: nvidia::deepstream::NvDsScheduler
+name: NvDsScheduler..5510
+ui_property: {}

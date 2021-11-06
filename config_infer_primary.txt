@@ -71,7 +71,7 @@ model-color-format=0
 ## 0=FP32, 1=INT8, 2=FP16 mode
 network-mode=1
 num-detected-classes=4
-# filter only person
+# filter only person class = 2
 filter-out-class-ids=0;1;3 
 interval=0
 gie-unique-id=1
@@ -107,6 +107,7 @@ pre-cluster-threshold=0.4
 #eps=0.7
 #dbscan-min-score=0.5
 
+# tuned class person = 2
 [class-attrs-2]
 pre-cluster-threshold=0.25
 eps=0.6
